@@ -14,7 +14,7 @@ const userRoutes = require('./BACKEND/routes/user-routes');
 app.use('/user', userRoutes);
 
 sequelize
-   .sync({force:true})
+   .sync()
    .then(result=>{
       app.listen(3000);
    })
