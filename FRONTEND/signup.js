@@ -8,8 +8,6 @@ async function signup(e){
         password: e.target.password.value
     }
 
-    console.log(signupdetails);
-
     await axios.post('http://localhost:3000/user/signup', signupdetails)
     .then(res=>{
         alert('signed up successfully');
