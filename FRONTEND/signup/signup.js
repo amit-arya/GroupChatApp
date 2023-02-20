@@ -16,3 +16,7 @@ async function signup(e){
         alert(err);
     })
 }
+
+document.getElementById('login').addEventListener('click', ()=>{
+    window.location.href = '../login/login.html';
+})
