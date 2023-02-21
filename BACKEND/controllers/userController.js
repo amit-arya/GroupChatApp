@@ -2,6 +2,9 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const signupUser = async (req, res) => {
     try {
         const name = req.body.name;
@@ -20,7 +23,7 @@ const signupUser = async (req, res) => {
 }
 
 const generateAccessToken = (id, name)=>{
-    return jwt.sign({userId:id, name:name }, process.env.JWT_Key);
+    return jwt.sign({userId:id, name:name }, process.env.JWT_KEY);
 }
 
 const loginUser = async (req, res) => {

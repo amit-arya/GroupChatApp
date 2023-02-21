@@ -9,6 +9,7 @@ async function login(e) {
     await axios.post('http://localhost:3000/user/login', loginDetails)
         .then(res => {
             alert('logged in successfully');
+            window.location.href = '../chat/chat.html';
         })
         .catch(err => {
             if (err.response.status == 401) {
