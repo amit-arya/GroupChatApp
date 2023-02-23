@@ -9,4 +9,15 @@ const sendMessage = async (req, res)=>{
     }
 }
 
-module.exports = { sendMessage }
+const getMessages = async (req, res)=>{
+    try{
+        Message.findAll({where:{userId:req.user.id}})
+        .then(messages=>{
+            return res.status(200).json({messages:messages, success:true})
+        })
+    } catch(err){
+        res.status(500).json({error:err});
+    }
+}
+
+module.exports = { sendMessage, getMessages}

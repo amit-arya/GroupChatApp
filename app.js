@@ -24,6 +24,7 @@ app.use('/user', userRoutes);
 
 const userAuthentication = require('./BACKEND/middleware/auth');
 app.use('/message', userAuthentication.authenticate, msgController.sendMessage);
+app.use('/get-messages', userAuthentication.authenticate, msgController.getMessages);
 
 sequelize
    .sync()
