@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,24 @@
     <title>Group Chat</title>
 
     <style>
-        h2 {text-align: center;}
+        h2 {
+            text-align: center;
+        }
     </style>
 </head>
+
 <body>
     <h2>Chat App</h2>
-    <div style="background-color: rgb(189, 185, 185);">You joined</div>
+    <div style="background-color: rgb(189, 185, 185);" id="messages">You joined</div>
+    <form onsubmit="sendmessage(event)">
+        <input type="text" id="message" placeholder="message">
+        <button>send</button>
+    </form>
+
+    <br>
+    <button id="logout">log out</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
     <script src="chat.js"></script>
 </body>
+
 </html>
