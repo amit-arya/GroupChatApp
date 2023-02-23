@@ -12,14 +12,16 @@ async function sendmessage(e){
     await axios.post('http://localhost:3000/message', msg, { headers: { "Authorization": token } })
     .then(res=>{
         showMessage(res.data.newMessage.message);
+        document.getElementById('message').value = "";
     })
     .catch(err=>{
         console.log({Error:err});
     })
 }
 
-window.addEventListener("DOMContentLoaded", async()=>{
+window.addEventListener("DOMContentLoaded", async ()=>{
     const token = localStorage.getItem('token');
+
     await axios.get("http://localhost:3000/get-messages",{ headers: {"Authorization":token }})
     .then((res)=>{
         for(let i=0;i<res.data.messages.length;i++){
