@@ -11,7 +11,8 @@ const sendMessage = async (req, res)=>{
 
 const getMessages = async (req, res)=>{
     try{
-        Message.findAll({where:{userId:req.user.id}})
+        //Message.findAll({where:{userId:req.user.id}})
+        Message.findAll()
         .then(messages=>{
             return res.status(200).json({messages:messages, success:true})
         })
