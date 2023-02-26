@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Chat</title>
+    <title>Chat App</title>
 
     <style>
         h2 {
@@ -16,14 +16,13 @@
 
 <body>
     <h2>Chat App</h2>
-    <div style="background-color: rgb(189, 185, 185);" id="messages">You joined</div>
-    <form onsubmit="sendmessage(event)">
-        <input type="text" id="message" placeholder="message">
-        <button>send</button>
-    </form>
-
     <br>
-    <button id="logout">log out</button>
+    <div id="messages">You joined</div>
+    Want to create new group?
+    <button id="creategroup">Click Here</button>
+    <br>
+    <button style="float: right;" id="logout">log out</button>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
     <script src="chat.js"></script>
 </body>

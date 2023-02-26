@@ -10,7 +10,8 @@ async function signup(e){
 
     await axios.post('http://localhost:3000/user/signup', signupdetails)
     .then(res=>{
-        alert('signed up successfully');
+        alert('signed up successfully, Login now');
+        window.location.href = '../login/login.html';
     })
     .catch(err=>{
         alert(err);
